@@ -43,7 +43,9 @@ def printDevider(len:int):
     print(devider)
 
 def printBinDec(info:str, list:list):
-    print(f"{info}: {list2StrDiv(list)}2, [{list2Num(list)}]10")
+    line = str(f"{info}: {list2StrDiv(list)}2, [{list2Num(list)}]10")
+    print(line)
+    return len(line)
 
 def adjustLength(s1:list, s2:list, fillLeft = True):
     s1_len = len(s1)
