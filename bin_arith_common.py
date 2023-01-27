@@ -159,26 +159,18 @@ def boothRadix2(m1:list, m2:list):
         dualcode[m1_cnt-i-2] = r1
         
         if (r1 == 1) and (r2 == 0):
-            operation = "ADD\""
+            print(f"{list2Str(dualcode)} : ADD\" : {list2Str(m22)}")
+            result = add(result, m22, False)
         elif (r1 == 0) and (r2 == 1):
-            operation = "ADD " 
-        else:
-            operation = "SHR "
+            print(f"{list2Str(dualcode)} : ADD  : {list2Str(m2)}")
+            result = add(result, m2, False)
 
-        print(f"{list2Str(dualcode)} : {operation} : {list2Str(result)}")
+        print(f"{list2Str(dualcode)} : SHR  : {list2Str(result)}") 
+        result = shiftRight(result, 0)
+
         dualcode[m1_cnt-i-1] = '-'
         dualcode[m1_cnt-i-2] = '-'
 
-        if (r1 == 1) and (r2 == 0):
-            print(f"{list2Str(dualcode)} :      : {list2Str(m22)}")
-            result = add(result, m22, False)
-            print(f"{list2Str(dualcode)} : SHR  : {list2Str(result)}")
-        elif (r1 == 0) and (r2 == 1):
-            print(f"{list2Str(dualcode)} :      : {list2Str(m2)}")
-            result = add(result, m2, False)
-            print(f"{list2Str(dualcode)} : SHR  : {list2Str(result)}")
-
-        result = shiftRight(result, 0)
         line = str(f"{list2Str(dualcode)} :      : {list2Str(result)}")
         print(line)
 
